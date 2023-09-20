@@ -14,5 +14,8 @@
     "url": "apiauth"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@vercel/node": "^3.0.5"
+  }
 }
