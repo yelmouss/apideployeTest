@@ -4,15 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
     "url": "apiauth"
   },
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@vercel/node": "^3.0.5"
-  }
+  "license": "ISC"
 }
