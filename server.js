@@ -1,8 +1,8 @@
 const http = require('http');
 const express = require('express');
 const app = express();
-app.get('/api/users',(req,res) => {
 
+app.get('/api/users',(req,res) => {
     return res.status(200).send('hello');
 })
  
@@ -15,6 +15,7 @@ app.get('/api/users',(req,res) => {
 //   res.end('Hello World');
 // });
  
-server.listen(port, /*hostname*/ () => {
-  console.log(`Server running at http://${port}/`);
+app.listen(3000,() => {
+
+    console.log('Listening on port 3000')
 });
