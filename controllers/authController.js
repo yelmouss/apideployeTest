@@ -1,8 +1,8 @@
 // authController.js
 // const bcrypt = require("bcrypt");
 // const jwt = require("jsonwebtoken");
-// const User = require("../models/User");
-// const nodemailer = require("nodemailer");
+const User = require("../models/User");
+const nodemailer = require("nodemailer");
 
 const dotenv = require("dotenv");
 const buf = Buffer.from("BASIC=basic");
