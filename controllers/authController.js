@@ -3,10 +3,11 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 const nodemailer = require("nodemailer");
-const dotenv = require("dotenv");
-const buf = Buffer.from("BASIC=basic");
-const config = dotenv.parse(buf); // will return an object
-dotenv.config()
+
+// const dotenv = require("dotenv");
+// const buf = Buffer.from("BASIC=basic");
+// const config = dotenv.parse(buf); // will return an object
+// dotenv.config()
 
 // // Configuration de Nodemailer
 // const transporter = nodemailer.createTransport({
