@@ -6,7 +6,7 @@ app.use(express.json());
 const dotenv = require("dotenv");
 const buf = Buffer.from("BASIC=basic");
 const config = dotenv.parse(buf); // will return an object
-
+dotenv.config()
 const mongoose = require("mongoose");
 
 // Connexion à la base de données MongoDB
@@ -37,6 +37,6 @@ app.use("/api", ImagesRoutes);
 
 
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log("Listening on port 3000");
 });
