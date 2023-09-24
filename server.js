@@ -2,7 +2,7 @@ const http = require("http");
 const express = require("express");
 
 const app = express();
-// app.use(express.json());
+app.use(express.json());
 const dotenv = require("dotenv");
 const buf = Buffer.from("BASIC=basic");
 const config = dotenv.parse(buf); // will return an object
