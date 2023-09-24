@@ -53,7 +53,7 @@ const ImagesRoutes = require("./routes/Images");
 app.use("/api", ImagesRoutes);
 
 // Importer les routes d'authentification
-// const authRoutes = require("./routes/authRoutes");
+const authRoutes = require("./routes/authRoutes");
 // app.use("/api/auth", authRoutes);
 // Importer les routes d'envoi d'email
 const MailingRoutes = require("./routes/MailingRoutes");
