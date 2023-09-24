@@ -47,8 +47,17 @@ app.get("/api/public", (req, res) => {
   });
 });
 
+
+// Importer les routes d'Images
 const ImagesRoutes = require("./routes/Images");
 app.use("/api", ImagesRoutes);
+
+// Importer les routes d'authentification
+const authRoutes = require("./routes/authRoutes");
+app.use("/api/auth", authRoutes);
+// Importer les routes d'envoi d'email
+const MailingRoutes = require("./routes/MailingRoutes");
+app.use("/api", MailingRoutes);
 
 
 
