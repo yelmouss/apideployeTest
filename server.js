@@ -50,6 +50,12 @@ app.get("/api/public", (req, res) => {
 // Importer les routes d'Images
 const ImagesRoutes = require("./routes/Images");
 app.use("/api", ImagesRoutes);
+const path = require("path");
+
+// Serve the static React app (build) from the "client/build" directory
+// app.use(express.static(path.join(__dirname, "front/build")));
+app.use("/images", express.static(path.join(__dirname, "images")));
+
 
 // Importer les routes d'authentification
 const authRoutes = require("./routes/authRoutes");
