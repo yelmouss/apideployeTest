@@ -4,9 +4,10 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv");
-const buf = Buffer.from("BASIC=basic");
-const config = dotenv.parse(buf); // will return an object
-dotenv.config()
+// const buf = Buffer.from("BASIC=basic");
+// const config = dotenv.parse(buf); // will return an object
+// dotenv.config()
+
 // Configuration de Nodemailer
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -16,7 +17,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Fonction pour gérer l'inscription
+
 // Fonction pour gérer l'inscription
 exports.signup = async (req, res) => {
   try {
