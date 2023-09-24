@@ -1,63 +1,21 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-require("dotenv").config();
+const http = require('http');
+const express = require('express');
 const app = express();
-app.use(express.json());
-const cors = require("cors");
-app.use(cors());
 
-// Connexion à la base de données MongoDB
-mongoose
-  .connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.error(err));
-
-//header d'accès global à l'API
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
-  );
-  next();
-});
-// Importer les routes d'authentification
-const authRoutes = require("./routes/authRoutes");
-app.use("/api/auth", authRoutes);
-// Importer les routes d'envoi d'email
-const MailingRoutes = require("./routes/MailingRoutes");
-app.use("/api", MailingRoutes);
-
-// Importer d'ajout de photos et articles
-const ImagesRoutes = require("./routes/Images");
-app.use("/api", ImagesRoutes);
-
-const path = require("path");
-
-// Serve the static React app (build) from the "client/build" directory
-// app.use(express.static(path.join(__dirname, "front/build")));
-app.use("/images", express.static(path.join(__dirname, "images")));
-
-// app.get("/api/users", (req, res) => {
-//   return res.status(200).send("hello");
+app.get('/api/users',(req,res) => {
+    return res.status(200).send('hello');
+})
+ 
+// const hostname = '127.0.0.1';
+// const port = 3000;
+ 
+// const server = http.createServer((req, res) => {
+//   res.statusCode = 200;
+//   res.setHeader('Content-Type', 'text/plain');
+//   res.end('Hello World');
 // });
+ 
+app.listen(3000,() => {
 
-app.get("/api/public", (req, res) => {
-  res.status(200).send({
-    MyLove: "Racha Bennis",
-  });
+    console.log('Listening on port 3000')
 });
-
-app.listen(3000, () => {
-  console.log("Listening on port 3000");
-});
-
