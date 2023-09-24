@@ -1,9 +1,6 @@
 const http = require("http");
 const express = require("express");
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-require("dotenv").config();
+
 const app = express();
 // app.use(express.json());
 
@@ -18,7 +15,7 @@ app.get("/api/users", (req, res) => {
 
 app.get("/api/public", (req, res) => {
   res.status(200).send({
-    data: "test",
+    Baby: "RB",
   });
 });
 // Always serve the React app's HTML for all routes
