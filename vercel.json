@@ -11,5 +11,12 @@
         "src": "/(.*)",
         "dest": "server.js"
       }
+    ],
+
+    "rewrites": [
+      {
+        "source": "/images/(.*)",
+        "destination": "/images/$1"
+      }
     ]
   }
