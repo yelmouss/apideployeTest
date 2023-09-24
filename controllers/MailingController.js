@@ -1,5 +1,7 @@
 const nodemailer = require("nodemailer");
-require("dotenv").config();
+const dotenv = require("dotenv");
+const buf = Buffer.from("BASIC=basic");
+const config = dotenv.parse(buf); // will return an object
 
 // Configuration de Nodemailer
 const transporter = nodemailer.createTransport({
