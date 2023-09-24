@@ -36,7 +36,7 @@ app.use("/api/auth", authRoutes);
 // Importer les routes d'envoi d'email
 const MailingRoutes = require("./routes/MailingRoutes");
 app.use("/api", MailingRoutes);
-i
+
 // Importer d'ajout de photos et articles
 const ImagesRoutes = require("./routes/Images");
 app.use("/api", ImagesRoutes);
