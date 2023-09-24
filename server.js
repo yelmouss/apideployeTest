@@ -1,6 +1,13 @@
 const http = require('http');
-const express = require('express');
+const express = require("express");
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
 const app = express();
+app.use(express.json());
+const cors = require("cors");
+app.use(cors());
 
 app.get('/api/users',(req,res) => {
     return res.status(200).send('hello');
