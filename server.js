@@ -46,25 +46,7 @@ app.get("/api/public", (req, res) => {
 //   next();
 // });
 // Importer les routes d'authentification
-const authRoutes = require("./routes/authRoutes");
-app.use("/api/auth", authRoutes);
-// Importer les routes d'envoi d'email
-const MailingRoutes = require("./routes/MailingRoutes");
-app.use("/api", MailingRoutes);
 
-// Importer d'ajout de photos et articles
-const ImagesRoutes = require("./routes/Images");
-app.use("/api", ImagesRoutes);
-
-const path = require("path");
-
-// Serve the static React app (build) from the "client/build" directory
-// app.use(express.static(path.join(__dirname, "front/build")));
-app.use("/images", express.static(path.join(__dirname, "images")));
-// Always serve the React app's HTML for all routes
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "front/build", "index.html"));
-// });
 app.listen(3000, () => {
   console.log("Listening on port 3000");
 });
